@@ -14,7 +14,17 @@ A basic 2-bit adder block with testbench
 ipbb proj create sim 01_half_adder_tb  ipbb-examples:01/half-adder -t half_adder_simple_tb.dep
 cd 01_half_adder_tb
 ipbb sim make-project
-vsim work.half_adder_simple_tb
+./vsim -novopt work.half_adder_simple_tb
+```
+
+in modelsim/questasim tcl shell
+```tcl
+add wave -position insertpoint  \
+sim:/half_adder_simple_tb/a \
+sim:/half_adder_simple_tb/b \
+sim:/half_adder_simple_tb/carry \
+sim:/half_adder_simple_tb/sum
+run 200ns
 ```
 
 
