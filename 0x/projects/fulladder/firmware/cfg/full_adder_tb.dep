@@ -1,0 +1,2 @@
+src full_adder_tb.vhd
+include full_adder.dep

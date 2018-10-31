@@ -1,0 +1,2 @@
+src halfadder_testbench.vhd
+include halfadder.dep

@@ -1,0 +1,2 @@
+src adder_tb.dep
+include adder.dep
