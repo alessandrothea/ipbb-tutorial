@@ -9,7 +9,7 @@ A basic 2-bit adder block with testbench
 - Provided with top-level testbench, `half-adder_tb`
 - Minimal package, no substructure, no component-project splitting
 
-Commands
+### ipbb commands
 ```sh
 ipbb proj create sim 01_half_adder_tb  ipbb-examples:01/half-adder -t half_adder_simple_tb.dep
 cd 01_half_adder_tb
@@ -17,4 +17,24 @@ ipbb sim make-project
 vsim work.half_adder_simple_tb
 ```
 
+
+## 02 - Mod Counter
+Mod-m counter counts the values from 0 to (m-1).
+Identical to `01` from ipbb's perspective
+- Code example from [vhdlguide](vhdlguide-half-modMcounter)
+- `modMCounter` entity, N-bit counter up to M.
+- provided with top-level testbench, `modMCounter_tb`
+- Minimal package, no substructure, no component-project splitting
+ 
+```sh
+ipbb proj create sim 02_modMCounter_tb  ipbb-examples:02/modMCounter -t modMCounter_tb.dep
+cd 02_modMCounter_tb
+ipbb sim make-project
+vsim work.modMCounter_tb
+```
+
+
+# 03 - Full adder
+
 [vhdlguide-half-adder]: https://vhdlguide.readthedocs.io/en/latest/vhdl/firstproject.html#vhdl-half-adder-vhdl
+[vhdlguide-half-modMcounter]: https://vhdlguide.readthedocs.io/en/latest/vhdl/vvd.html#vhdl-modmcounter
