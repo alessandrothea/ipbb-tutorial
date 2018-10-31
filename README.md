@@ -3,15 +3,15 @@
 An essential tutorial to `ipbb`: How to create and simulate and eventually build firmware projects with `ipbb`. The examples, increasing in complexity, show how to include source files in a ipbb project by means of dependency files and use them to create vivado or modelsim/questasim projects.
 
 ## 01 - Half adder
-A basic 2-bit adder block with testbench
+A simple 2-bit adder block with testbench.
+- Minimal package example, no substructure, no component-project splitting
 - Code example from [vhdlguide](vhdlguide-half-adder)
-- `half-adder` entity: performs a 2 bit-sum with carry-over.
-- Provided with top-level testbench, `half-adder_tb`
-- Minimal package, no substructure, no component-project splitting
+- `half_adder` entity: calculates a 2 bit-sum with carry-over.
+- `half_adder_tb` testbench: tests all output values.
 
 ### ipbb commands
 ```sh
-ipbb proj create sim 01_half_adder_tb  ipbb-examples:01/half-adder -t half_adder_simple_tb.dep
+ipbb proj create sim 01_half_adder_tb  ipbb-tutorial:01/half_adder -t half_adder_simple_tb.dep
 cd 01_half_adder_tb
 ipbb sim make-project
 ./vsim -novopt work.half_adder_simple_tb
@@ -31,20 +31,35 @@ run 200ns
 ## 02 - Mod Counter
 Mod-m counter counts the values from 0 to (m-1).
 Identical to `01` from ipbb's perspective
+- Minimal package, no substructure, no component-project splitting
 - Code example from [vhdlguide](vhdlguide-half-modMcounter)
 - `modMCounter` entity, N-bit counter up to M.
 - provided with top-level testbench, `modMCounter_tb`
-- Minimal package, no substructure, no component-project splitting
  
+### ipbb commands
 ```sh
-ipbb proj create sim 02_modMCounter_tb  ipbb-examples:02/modMCounter -t modMCounter_tb.dep
+ipbb proj create sim 02_modMCounter_tb  ipbb-tutorial:02/modMCounter -t modMCounter_tb.dep
 cd 02_modMCounter_tb
 ipbb sim make-project
-vsim work.modMCounter_tb
+vsim -novopt work.modMCounter_tb
 ```
 
+in modelsim/questasim tcl shell
 
 # 03 - Full adder
+A full adder implementation using 2 half adders. 
+- 2-components examples. `half_adder` and `full_adder` belong to different "components". The testbench is located in a separate folder `tests`.
+- `full_adder` entity: implements a full 2-bit adder as with 2 half_adders.
+- `full_adder_tb` testbench: tests all output values.
+
+### ipbb commands
+```sh
+ipbb proj create sim 03_full_adder ipbb-tutorial:03/tests -t full_adder_tb.dep
+cd 03_full_adder
+ipbb sim make-project
+./vsim -novopt work.half_adder_simple_tb
+```
+
 
 [vhdlguide-half-adder]: https://vhdlguide.readthedocs.io/en/latest/vhdl/firstproject.html#vhdl-half-adder-vhdl
 [vhdlguide-half-modMcounter]: https://vhdlguide.readthedocs.io/en/latest/vhdl/vvd.html#vhdl-modmcounter

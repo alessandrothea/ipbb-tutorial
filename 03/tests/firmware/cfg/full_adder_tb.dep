@@ -1,1 +1,2 @@
+src full_adder_tb.vhd
 include -c 03/components/full_adder

@@ -1,1 +1,2 @@
+src full_adder.vhd
 include -c 03/components/half_adder
