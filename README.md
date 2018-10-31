@@ -2,6 +2,21 @@
 
 An essential tutorial to `ipbb`: How to create and simulate and eventually build firmware projects with `ipbb`. The examples, increasing in complexity, show how to include source files in a ipbb project by means of dependency files and use them to create vivado or modelsim/questasim projects.
 
+## Getting started
+
+Install `ipbb` locally:
+```sh
+curl -L https://github.com/ipbus/ipbb/archive/v0.3.7.tar.gz | tar xvz
+source ipbb-0.3.7/env.sh
+```
+
+Prepare a work are and add the tutorial code to it:
+```
+ipbb init tutorial
+cd tutorial
+ipbb git add git@github.com:alessandrothea/ipbb-tutorial.git
+```
+
 ## 01 - Half adder
 A simple 2-bit adder block with testbench.
 - Minimal package example, no substructure, no component-project splitting
