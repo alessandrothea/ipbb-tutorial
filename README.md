@@ -46,7 +46,7 @@ vsim -novopt work.modMCounter_tb
 
 in modelsim/questasim tcl shell
 
-# 03 - Full adder
+## 03 - Full adder
 A full adder implementation using 2 half adders. 
 - 2-components examples. `half_adder` and `full_adder` belong to different "components". The testbench is located in a separate folder `tests`.
 - `full_adder` entity: implements a full 2-bit adder as with 2 half_adders.
