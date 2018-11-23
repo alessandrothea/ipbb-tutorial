@@ -14,7 +14,7 @@ Prepare a work are and add the tutorial code to it:
 ```sh
 ipbb init tutorial
 cd tutorial
-ipbb git add git@github.com:alessandrothea/ipbb-tutorial.git
+ipbb add git git@github.com:alessandrothea/ipbb-tutorial.git
 ```
 
 ## 01 - Half adder
