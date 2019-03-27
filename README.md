@@ -6,8 +6,8 @@ An essential tutorial to `ipbb`: How to create and simulate and eventually build
 
 Install `ipbb` locally:
 ```sh
-curl -L https://github.com/ipbus/ipbb/archive/v0.3.7.tar.gz | tar xvz
-source ipbb-0.3.7/env.sh
+curl -L https://github.com/ipbus/ipbb/archive/v0.4.3.tar.gz | tar xvz
+source ipbb-0.4.3/env.sh
 ```
 
 Prepare a work are and add the tutorial code to it:
